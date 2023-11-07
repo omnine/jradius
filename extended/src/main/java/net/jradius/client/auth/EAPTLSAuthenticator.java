@@ -360,10 +360,8 @@ public class EAPTLSAuthenticator extends EAPAuthenticator
                     {
                     	state = 2;
                     }
-                    else
-                    {
-                    	break;
-                    }
+                    //see https://github.com/coova/jradius/pull/21/commits/9d19fcdb732b6a608ecbebc06415d52f0a400f3e
+                    break;
                 }
                 // drop through....
 
