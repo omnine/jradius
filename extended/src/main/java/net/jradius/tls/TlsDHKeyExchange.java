@@ -241,7 +241,7 @@ class TlsDHKeyExchange implements TlsKeyExchange
             X509Extension ext = exts.getExtension(X509Extensions.KeyUsage);
             if (ext != null)
             {
-                KeyUsage ku = KeyUsage.getInstance(ext);
+                KeyUsage ku = KeyUsage.getInstance(ext.getParsedValue());
                 int bits = ku.getBytes()[0] & 0xff;
                 if ((bits & keyUsageBits) != keyUsageBits)
                 {
