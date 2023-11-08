@@ -24,9 +24,9 @@ Then use `IntelliJ` to attach it,
 ![Alt text](./doc/debugger.png)
 
 # Test
-Basic Settings
+Basic Settings - Server and shared secret  
 ![Alt text](./doc/radius-server.png)
-
+Attributes  
 ![Alt text](./doc/radius-attributes.png)
 
 Wireshark traffic captures are provided for you convenience.
@@ -40,4 +40,5 @@ Wireshark traffic captures are provided for you convenience.
 ## PEAP (Inner MSCHAPv2)
 Please tick this option just in case your server certificate is not trusted by default.
 ![Alt text](./doc/trust-ca.png)
+
 [PEAP inner MSCHAPv2 Wireshark traffic capture](./doc/radious-peap-mschapv2.pcapng)
