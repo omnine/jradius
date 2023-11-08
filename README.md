@@ -25,7 +25,7 @@ Then use `IntelliJ` to attach it,
 
 # Test
 Basic Settings - Server and shared secret  
-![Alt text](./doc/radius-server.png)
+![Alt text](./doc/radius-server.png)  
 Attributes  
 ![Alt text](./doc/radius-attributes.png)
 
