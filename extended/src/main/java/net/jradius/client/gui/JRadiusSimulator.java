@@ -520,6 +520,7 @@ public class JRadiusSimulator extends JFrame
             saveMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, Event.CTRL_MASK, true));
             saveMenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
+                    collectEditingData();
                     if (configFileUrl.startsWith("file:///"))
                         saveConfigFile(configFileUrl.substring(7));
                     else
@@ -550,6 +551,7 @@ public class JRadiusSimulator extends JFrame
 
     private void doSaveAs()
     {
+        collectEditingData();
         JFileChooser chooser = new JFileChooser();
         int returnVal = chooser.showSaveDialog(JRadiusSimulator.this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -557,7 +559,13 @@ public class JRadiusSimulator extends JFrame
             saveConfigFile(file.getAbsolutePath());
         }
     }
-    
+    // Collect the data in the cell which is being edited, any better way?
+    private void collectEditingData()
+    {
+        if (attributesTable.isEditing()) {
+            attributesTable.getCellEditor().stopCellEditing();
+        }
+    }
     /**
      * This method initializes jMenuItem
      * 
@@ -830,7 +838,9 @@ public class JRadiusSimulator extends JFrame
             runButton.addActionListener(new java.awt.event.ActionListener() 
             { 
             	public synchronized void actionPerformed(java.awt.event.ActionEvent e) 
-            	{    
+            	{
+                    collectEditingData();
+
                     AbstractButton ab = (AbstractButton)e.getSource();
                     if (ab.isSelected())
                     {
