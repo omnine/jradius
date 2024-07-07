@@ -51,7 +51,7 @@ public class RadSecClientTransport extends RadiusClientTransport
     protected final ByteBuffer buffer_in;
     protected final ByteBuffer buffer_out;
 
-    private String[] protocols = new String[] { "TLSv1" };
+    private String[] protocols = new String[] { "TLSv1", "TLSv1.1", "TLSv1.2" };
     
 	public RadSecClientTransport(KeyManager keyManager, TrustManager trustManager) 
 	{
@@ -74,7 +74,7 @@ public class RadSecClientTransport extends RadiusClientTransport
 	{
 		try
 		{
-	        SSLContext sslContext = SSLContext.getInstance(protocols[0]);
+	        SSLContext sslContext = SSLContext.getInstance("TLS");
 	        sslContext.init(keyManagers, trustManagers, null);
 	        
 	        SSLSocketFactory socketFactory = sslContext.getSocketFactory();
@@ -82,6 +82,7 @@ public class RadSecClientTransport extends RadiusClientTransport
 	        socket.setReuseAddress(true);
 	        socket.setSoTimeout(getSocketTimeout() * 1000);
 	        socket.setEnabledProtocols(protocols);
+			socket.startHandshake();
 	        
 	        if (getAcctPort() != getAuthPort())
 	        {
