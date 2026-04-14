@@ -20,8 +20,22 @@ Run the simulator in debug mode,
 java -cp ".;.\lib\*" -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 net.jradius.client.gui.JRadiusSimulator
 ```
 
-Then use `IntelliJ` to attach it,
+Then use `IntelliJ` to attach it,  
+
 ![Alt text](./doc/debugger.png)
+# Protocols supported
+You can test the following protocols with JRadius client (simulator):
+- PAP
+- CHAP
+- MSCHAPv1
+- MSCHAPv2
+- EAP-MD5
+- EAP-MSCHAPv2
+- EAP-TLS
+- EAP-TTLS
+- PEAP
+
+![procol](./doc/ma4N0Ql3vi.png)
 
 # Test
 Basic Settings
