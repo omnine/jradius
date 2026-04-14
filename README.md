@@ -39,6 +39,7 @@ You can test the following protocols with JRadius client (simulator):
 
 # Test
 Basic Settings
+
 ![Alt text](./doc/radius-server.png)
 
 ![Alt text](./doc/radius-attributes.png)
@@ -52,6 +53,6 @@ Wireshark traffic captures are provided for you convenience.
 ## EAP-MSCHAPv2
 [EAP-MSCHAPv2 protocol Wireshark traffic capture](./doc/radius-eap-mschapv2.pcapng)
 ## PEAP (Inner MSCHAPv2)
-Please tick this option just in case your server certificate is not trusted by default.
-![Alt text](./doc/trust-ca.png)
+Please tick this option just in case your server certificate is not trusted by default.  
+![Alt text](./doc/trust-ca.png)  
 [PEAP inner MSCHAPv2 Wireshark traffic capture](./doc/radious-peap-mschapv2.pcapng)
